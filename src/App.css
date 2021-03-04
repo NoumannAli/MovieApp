@@ -1,0 +1,42 @@
+body{
+  background-color: black;
+  color: white;
+}
+
+.movie-app > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.img-container{
+  position: relative;
+  transition: 0.3s;
+}
+
+.img-container:hover{
+   transform: scale(1.1);
+   cursor: pointer;
+}
+
+.overlay{
+  position: absolute;
+  bottom: 0;
+  background-color:#00000085;
+  opacity: 0;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+
+}
+
+.img-container:hover .overlay{
+  cursor: pointer;
+  transition: 0.3s ease;
+  opacity: 1;
+}
+
+svg{
+  color:red;
+}
