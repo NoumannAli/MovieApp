@@ -1,3 +1,5 @@
+
+
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -9,13 +11,15 @@ import AddToFavorits from './components/AddToFavourits';
 import RemoveFavourits from "./components/RemoveFavourits"
 
 function App() {
+  require('dotenv').config();
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue ] = useState('avengers')
   const [addFavourits,setaddFavourits] = useState([])
 
 
+
 const getMovieResponse = async (searchValue) =>{
-      const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=9891b54a`;
+      const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${process.env.REACT_APP_SECRET_KEY}`;
 
       const response = await fetch(url);
       const responseJson = await response.json();
